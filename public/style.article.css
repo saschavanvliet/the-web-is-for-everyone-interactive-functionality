@@ -1,0 +1,33 @@
+:root {
+    --background-color: #F9CDC8;
+    --primary-color: black;
+    --secundary-color: #F6F6F4;
+    --theme-color: #e84340;
+    --font-size: 14px;
+  }
+
+.article-content {
+ margin-top: 5em;
+ margin-left: 1em;
+ margin-right: 1em;
+ background-color: var(--secundary-color);
+ padding: 0.5em;
+ word-break: break-all;
+}
+
+.article-content img{
+ max-width: 80%;
+ min-width: 4em;
+ height: auto;
+ margin-left: 0;
+}
+
+@media only screen and (min-width: 400px) {
+    .article-content {
+    word-break: normal;
+    margin-top: 5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    padding: 1.5em;
+    }
+}

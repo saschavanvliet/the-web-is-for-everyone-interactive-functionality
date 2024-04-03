@@ -1,0 +1,142 @@
+:root {
+  --background-color: #F9CDC8;
+  --primary-color: black;
+  --secundary-color: #F6F6F4;
+  --theme-color: #e84340;
+  --font-size: 14px;
+}
+
+/*NAV BAR*/
+nav {
+  background-color: var(--secundary-color);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 999;
+  overflow: hidden;
+  margin-top: -5em;
+}
+
+nav a {
+  margin: auto;
+  margin-left: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+.navlogo img {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  width: 20%;
+  min-width: 10em;
+  height: auto;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 2%;
+}
+
+.navlogo :hover {
+  scale: 1.035;
+  transition: scale 100ms ease-in-out;
+}
+
+nav ul :hover {
+  color: var(--theme-color);
+  text-decoration: underline, var(--theme-color);
+  font-style: italic;
+}
+
+.navbar-shadow {
+  box-shadow: 0 0.5px 4px var(--theme-color); /* Schaduwstijl aanpassen zoals gewenst */
+}
+/*EINDE NAV*/
+
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /*Geen overflow op de x-as! */
+}
+
+a {
+  text-decoration: none;
+}
+
+a h2:hover {
+  text-decoration: underline;
+  font-style: italic;
+  color: var(--theme-color);
+}
+
+.home-articles img{
+  width: 80%;
+  height: auto;
+}
+
+.home-articles li{
+  padding: 2em;
+  background-color: var(--secundary-color);
+  width: 80%;
+  height: 80%;
+  min-width: 3em;
+  cursor: pointer;
+}
+
+.home-articles {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr; 
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+}
+
+ul.home-articles {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0;
+  margin-top: 0;
+  list-style-type: none;
+  margin-top: 5em;
+}
+
+li.home-articles {
+  padding: 10em;
+}
+
+h2 {
+word-break: break-all;
+}
+
+/* Media queries voor verschillende groottes */
+@media only screen and (min-width: 330px) {
+  h2 {
+    word-break: normal;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .home-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    /*Grid met drie kolommen*/
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .home-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

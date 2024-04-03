@@ -1,0 +1,8 @@
+<%- include('./partials/head') %>
+
+    <main class="article-content">
+        <h1><%-article.title.rendered%></h1>
+        <p><%-article.content.rendered%></p>
+        <img src="<%=article.jetpack_featured_media_url%>">
+    </main>
+  <%- include('./partials/foot') %>
