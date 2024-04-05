@@ -15,10 +15,9 @@ function addShadowOnScroll() {
   }
 }
 
+
 // Eventlistener toevoegen voor scrollen
 window.addEventListener('scroll', addShadowOnScroll);
-
-
 document.getElementById("opslaanbutton").addEventListener("click", function() {
   document.getElementById("popup").style.display = "block";
   // Voeg hier eventueel verdere acties toe, zoals het opslaan van de inhoud

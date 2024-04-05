@@ -138,10 +138,20 @@ button#verstuur {
   padding: 0.7em;
   border-radius: 10%;
   position: flex;
+  gap: 2em;
+}
+
+textarea {
+  width: 15em;
+  height: 5em;
 }
 
 .form {
   margin-left: 2em;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* Media queries voor verschillende groottes */
