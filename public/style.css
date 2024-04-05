@@ -16,6 +16,7 @@ nav {
   z-index: 999;
   overflow: hidden;
   margin-top: -5em;
+  max-height: 6em;
 }
 
 nav a {
@@ -70,6 +71,11 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--primary-color);
+}
+
+h3 {
+  opacity: calc(70%);
 }
 
 a h2:hover {
@@ -116,6 +122,26 @@ li.home-articles {
 
 h2 {
 word-break: break-all;
+}
+
+button#opslaanbutton {
+  color: var(--secundary-color);
+  background-color: var(--theme-color);
+  border: none;
+  width: 30%;
+}
+
+button#verstuur {
+  color: var(--secundary-color);
+  background-color: var(--theme-color);
+  border: none;
+  padding: 0.7em;
+  border-radius: 10%;
+  position: flex;
+}
+
+.form {
+  margin-left: 2em;
 }
 
 /* Media queries voor verschillende groottes */

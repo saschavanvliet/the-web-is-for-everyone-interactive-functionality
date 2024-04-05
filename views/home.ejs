@@ -1,16 +1,36 @@
 <%- include('./partials/head') %>
   <main>
     <ul class="home-articles">
-      <% articles.forEach(article => { %>
+      <% articles.forEach(article=> { %>
         <li>
+          <button onclick="myfunction()" id="opslaanbutton">Opslaan</button>
           <a href="/artikel/<%=article.slug%>">
             <img src="<%=article.jetpack_featured_media_url%>" alt="<%=article.title.rendered%>">
             <h2><%-article.title.rendered%></h2>
-            <h3><%=article.yoast_head_json.author%> - <span class="leestijd-articles">3 min</span></h3>
+            <h3>
+              <%=article.yoast_head_json.author%> - <span class="leestijd-articles">3 min</span>
+            </h3>
           </a>
         </li>
-      <% }) %>
+        <% }) %>
     </ul>
+
+    <div class="form">
+    <h2>Laat een berichtje achter!</h2>
+    <form method="Post" action="/">
+      <label for="bericht">
+        <textarea id="messages" name="messages"></textarea>
+      </label>
+      <button id="verstuur" type="submit">Verstuur</button>
+    </form>
+    <ul>
+      <% messages.forEach(message=>{ %>
+        <li>
+          <%=message %>
+        </li>
+        <% }) %>
+    </ul>
+    </div>
   </main>
-</body>
+  </body>
   <%- include('./partials/foot') %>

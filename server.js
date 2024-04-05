@@ -16,7 +16,7 @@ const apiDirectus = 'https://fdnd-agency.directus.app/items/redpers_shares'
 //Params --> aangevraagde slug
 //Gebruik een form voor de post data
 
-// Haal alle squads uit de WHOIS API op
+// Haal alle variabelen op die je wil maken.
 const apiPosts = apiUrl + '/posts'
 const apiUsers = apiUrl + '/users'
 const apiCategories = apiUrl + '/categories'
@@ -43,12 +43,15 @@ app.get('/', function (_request, response) {
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('home.ejs', {articles: apiData})
+    response.render('home.ejs', {articles: apiData,messages:messages})
   })
 })
 
+const messages=[]
 // Maak een POST route voor de index (home)
 app.post('/', function (request, response) {
+  messages.push(request.body.messages)
+  console.log(JSON.stringify(messages))
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
 })
@@ -56,8 +59,7 @@ app.post('/', function (request, response) {
 app.get('/artikel/:slug', function (request, response) {
   // --> dit zijn routes (home, article, category)
  
-  // Hier haal je de url op en maak je er een
-  // Json file van ipv een link. Waarna het wordt vernoemd naar apiData
+  // Hier haal je de url op en maak je er een Json file van ipv een link. Waarna het wordt vernoemd naar apiData
   fetchJson(apiPosts + '?slug=' + request.params.slug).then((apiData) => {
  
       // Deze info wordt daarna
