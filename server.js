@@ -72,32 +72,8 @@ app.get('/artikel/:slug', function (request, response) {
   })
 })
 
-// Stap 4 | Het maken van categorieeen in routes
-const categoryRoutes = [
-  'binnenland',
-  'buitenland',
-  'column',
-  'economie',
-  'kunst & media',
-  'podcast',
-  'politiek',
-  'wetenschap'
-]
-//  https://redpers.nl/wp-json/wp/v2/posts?filter=[articleSection]=%22binnenland%22
-categoryRoutes.forEach(category => {
-  app.get("/" + category, function (request, response) {
-      fetchJson(apiCategories + "?filter=" + category).then((categoryApi) => {
-
-        // Kijken of alle goede dat is binnengekomen
-        // console.log(categoryApi)
-
-        response.render('category.ejs')
-    });
-  });
-})
-
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 9000)
+app.set('port', process.env.PORT || 2000)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
