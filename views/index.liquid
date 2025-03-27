@@ -1,0 +1,14 @@
+{% render 'partials/head.liquid' %}
+ 
+{% for stekje in stekjes %}
+<a href="/stekjes/{{ stekje.id }}" id="stekje-{{ stekje.id }}">
+    <p>{{ stekje.naam }} </p>
+    <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="200px">
+</a>
+{% endfor %}
+
+{% for plaatje in plaatjes %}
+    <img src="https://fdnd-agency.directus.app/assets/{{ plaatje.foto }}" alt="" class="plaatjes-index" width="200px"> 
+{% endfor %}
+
+{% render 'partials/foot.liquid' %}
