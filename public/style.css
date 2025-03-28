@@ -1,0 +1,4 @@
+body.errorpage {
+    background: var(--primary-color-green);
+    color: var(--primary-color-beige);
+}
