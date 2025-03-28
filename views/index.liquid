@@ -4,8 +4,26 @@
 <a href="/stekjes/{{ stekje.id }}" id="stekje-{{ stekje.id }}">
     <p>{{ stekje.naam }} </p>
     <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="200px">
+    <form></form>
+    <h1>{{ stekje.naam }}</h1>
 </a>
+
+<form action="/stekjes/{{ stekje.id }}" method="POST">
+                <input type="hidden" name="from" value="{{ stekje.id }}">
+                <button type="submit" class="like-button" aria-label="Like {{ stekje.naam }}">❤️</button>
+            </form>
 {% endfor %}
+
+    <script>
+    async function likeStekje(stekjeId) {
+        const response = await fetch(`/stekjes/${stekjeId}/like`, { method: 'POST' });
+        const data = await response.json();
+        
+        if (data.success) {
+        document.getElementById(`likes-${stekjeId}`).textContent = data.nieuweLikes;
+        }
+    }
+    </script>
 
 {% for plaatje in plaatjes %}
     <img src="https://fdnd-agency.directus.app/assets/{{ plaatje.foto }}" alt="" class="plaatjes-index" width="200px"> 
