@@ -21,8 +21,16 @@ header a, header summary, header h1 {
     color: white;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 2em; 
+    width: 100%;
+}
+
 .grid-container {
-    width: 50%;
     display: grid;
     grid-auto-flow: column;
     place-items: center;
@@ -42,6 +50,13 @@ header a, header summary, header h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.beschrijving {
+    background: var(--primary-color-green);
+    padding: 6.1em;
+    color: var(--background-color-main);
+    margin-right: 3em;
 }
 
 body.errorpage {
