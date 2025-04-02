@@ -2,10 +2,9 @@
  
 {% for stekje in stekjes %}
 <a href="/stekjes/{{ stekje.id }}" id="stekje-{{ stekje.id }}">
-    <p>{{ stekje.naam }} </p>
-    <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="200px">
-    <form></form>
     <h1>{{ stekje.naam }}</h1>
+    <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="200">
+    <form></form>
 </a>
 
 <form action="/stekjes/{{ stekje.id }}" method="POST">
