@@ -121,9 +121,9 @@ Bieb in Bloei streeft naar **meer buurtcohesie** op het gebied van duurzaamheid 
 User stories: 
 - Als gebruiker wil ik stekjes kunnen zien op de website van Bieb in Bloei zodat ik een overzicht heb van alle stekjes.
 - Ik wil op de website kunnen navigeren als ik alleen gebruik kan maken van HTML. Alles moet het eerst doen zonder css en JavaScript.
-- Als gebruiker van de website van bieb in bloei wil stekjes kunnen liken zodat ik kan aantonen dat ik een stekje leuk vind. Voor de opdrachtgever is dit een leuke interessante tool om meer interactie te bieden op de website en tevens kunnen deze statistieken wellicht handig zijn om te onderzoeken.
+- Als gebruiker van de website van bieb in bloei wil stekjes kunnen liken zodat ik kan aantonen dat ik een stekje leuk vind. Voor de opdrachtgever is dit een leuke interessante tool om aan de hand van deze statistieken te onderzoeken.
 
-Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekjespagina. 
+Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekjespagina. Met deze website kunnen gebruikers die in de Openbare Bibliotheek van Amsterdam (nu nog alleen in Oost) komen de website navigeren en hun favoriete stekjes bekijken. Op de website is namelijk een overzicht van alle stekjes te vinden. Gebruikers kunnen tevens hun favoriete stekje liken en dit komt in de database terecht. 
 
 
 
@@ -139,13 +139,30 @@ Voor dit project heb ik een interactieve website gebouwd waarbij ik gebruik heb 
 
 Om te website op te zetten heb ik gebruik gemaakt van Node.JS (server-side JavaScript) met packages als Express en Liquid.
 
+States hier uitleggen!!!
+
 Bij de ontwikkeling van de website heb ik HTML, CSS en JavaScript gecombineerd om zowel de basisfunctionaliteit als interactieve elementen te realiseren. Door progressive enhancement toe te passen, blijft de kernfunctionaliteit van de website intact, zelfs wanneer JavaScript en css zijn uitgeschakeld. De website is daarnaast responsief ontworpen, zodat hij goed werkt op zowel desktop als mobiele apparaten. Ten slotte is de website getest op verschillende browsers om te kijken of functies ondersteund worden.
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
 Omdat je een NodeJs project, met Express en Liquid hebt gemaakt, beschrijf je in de Readme ook hoe iemand anders het project kan installeren. Bij installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. Hoe leg je aan iemand anders uit dat je bijvoorbeeld NPM hebt gebruikt?
 
+Het project is gemaakt met Node.JS. Dit is server-side Javascript en zal los gedownload moeten worden. In Visual Studio Code kan je vervolgens code schrijven voor een website met een live server die niet alleen lokaal gerendered wordt. In VS code haal je dependencies (pakketten) op door 'npm install' in de terminal te zetten. Vervolgens kan je met 'npm start' de port openen waarop de server live staat. Deze port maak je zelf aan. Maak de server aan door 'node server.js' in te voeren. 
+
+We verdelen de mappen in twee soorten mappen: client-side en server-side: een views map en een public map. De public-map is voor statische bestanden, zoals css en client-side JavaScript. Stel dit in aan de hand van deze code: ```app.use(express.static('public'))``` ```app.set('views', './views')```.
+
+In dit project wordt gebruik gemaakt van Express. Dit is een framework waarmee routes kunnen worden aangemaakt in de server.js. Voor elke nieuwe pagina moet namelijk een aparte route worden neergezet. Je downloadt Express met de volgende code: ```const express = require('express');``` ```const app = express();```. Tenslotte moet er nog een package gedownload worden waar inhoud dynamisch met code geschreven kan worden. Dit moet aan de hand van deze code: ```import { Liquid } from 'liquidjs';``` & ```const engine = new Liquid(); app.engine('liquid', engine.express());```.
+
+
+Je kan html schri
+
 ## Bronnen
+- [Wireflow schetsen maken](https://github.com/fdnd-task/connect-your-tribe-squad-page/blob/main/docs/filteren-en-sorteren.md#wireflow-schetsen)
+- [Post maken](https://github.com/fdnd-task/connect-your-tribe-squad-page/blob/main/docs/user-generated-content.md#oefenen-met-een-post)
+- [UI stacks](https://github.com/fdnd-task/the-web-is-for-everyone-interactive-functionality/blob/main/docs/ui-states.md)
+- [@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+- [Can I Use?](https://caniuse.com/)
+- [HTML validator](https://validator.w3.org/)
 
 ## Licentie
 
