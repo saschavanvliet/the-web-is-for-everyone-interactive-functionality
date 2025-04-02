@@ -18,7 +18,12 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual of video toe 📸 -->
 <!-- Voeg een link toe naar GitHub Pages 🌐-->
-In je Readme staat bij beschrijving wat voor project het is en wat je hebt gemaakt. Voeg hier ook een link toe naar de live website. https://the-web-is-for-everyone-interactive-wef2.onrender.com/
+
+Het project Bieb in Bloei is een sociaal en duurzaam initiatief in samenwerking met OBA Linnaeus en buurtbewoners van Amsterdam Oost. De website die ik heb ontwikkeld, richt zich op de Stekjespagina, waar gebruikers een overzicht vinden van beschikbare stekjes en hun favoriete stekje kunnen liken. 
+
+De website is ontworpen met een progressive enhancement-aanpak, waardoor de kernfunctionaliteit ook zonder JavaScript en CSS intact blijft. Met Node.js, Express en Liquid worden dynamische pagina’s gegenereerd, en data wordt opgehaald uit een Directus CMS. De focus ligt op toegankelijkheid, gebruiksvriendelijkheid en een visueel aantrekkelijke weergave van duurzame initiatieven. Dit project draagt bij aan de missie van Bieb in Bloei om de buurt te verbinden door middel van groen en sociale interactie.
+
+https://the-web-is-for-everyone-interactive-wef2.onrender.com/
 
 ### Debriefing opdrachtgever
 
@@ -116,8 +121,6 @@ Bieb in Bloei streeft naar **meer buurtcohesie** op het gebied van duurzaamheid 
 </details>
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. --> Bij gebruik leg je uit hoe de website werkt en wat je ermee kan. Laat hier ook de user stories zien die je hebt gemaakt en toon hoe het is geworden.
-
 User stories: 
 - Als gebruiker wil ik stekjes kunnen zien op de website van Bieb in Bloei zodat ik een overzicht heb van alle stekjes.
 - Ik wil op de website kunnen navigeren als ik alleen gebruik kan maken van HTML. Alles moet het eerst doen zonder css en JavaScript.
@@ -125,6 +128,7 @@ User stories:
 
 Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekjespagina. Met deze website kunnen gebruikers die in de Openbare Bibliotheek van Amsterdam (nu nog alleen in Oost) komen de website navigeren en hun favoriete stekjes bekijken. Op de website is namelijk een overzicht van alle stekjes te vinden. Gebruikers kunnen tevens hun favoriete stekje liken en dit komt in de database terecht. 
 
+--> Tonen hoe het is geworden???
 
 
 ## Kenmerken
@@ -145,16 +149,15 @@ Bij de ontwikkeling van de website heb ik HTML, CSS en JavaScript gecombineerd o
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
-Omdat je een NodeJs project, met Express en Liquid hebt gemaakt, beschrijf je in de Readme ook hoe iemand anders het project kan installeren. Bij installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. Hoe leg je aan iemand anders uit dat je bijvoorbeeld NPM hebt gebruikt?
 
 Het project is gemaakt met Node.JS. Dit is server-side Javascript en zal los gedownload moeten worden. In Visual Studio Code kan je vervolgens code schrijven voor een website met een live server die niet alleen lokaal gerendered wordt. In VS code haal je dependencies (pakketten) op door 'npm install' in de terminal te zetten. Vervolgens kan je met 'npm start' de port openen waarop de server live staat. Deze port maak je zelf aan. Maak de server aan door 'node server.js' in te voeren. 
 
 We verdelen de mappen in twee soorten mappen: client-side en server-side: een views map en een public map. De public-map is voor statische bestanden, zoals css en client-side JavaScript. Stel dit in aan de hand van deze code: ```app.use(express.static('public'))``` ```app.set('views', './views')```.
 
-In dit project wordt gebruik gemaakt van Express. Dit is een framework waarmee routes kunnen worden aangemaakt in de server.js. Voor elke nieuwe pagina moet namelijk een aparte route worden neergezet. Je downloadt Express met de volgende code: ```const express = require('express');``` ```const app = express();```. Tenslotte moet er nog een package gedownload worden waar inhoud dynamisch met code geschreven kan worden. Dit moet aan de hand van deze code: ```import { Liquid } from 'liquidjs';``` & ```const engine = new Liquid(); app.engine('liquid', engine.express());```.
+In dit project wordt gebruik gemaakt van Express. Dit is een framework waarmee routes kunnen worden aangemaakt in de server.js. Voor elke nieuwe pagina moet namelijk een aparte route worden neergezet. Je downloadt Express met de volgende code: ```const express = require('express');``` ```const app = express();```. Tenslotte moet er nog een package gedownload worden waar inhoud dynamisch met code geschreven kan worden. Dit moet aan de hand van deze code: ```import { Liquid } from 'liquidjs';``` & ```const engine = new Liquid(); app.engine('liquid', engine.express());```. Met liquid kan je html code schrijven.
 
+Deze code wordt opgehaald door gebruik te maken van double brackets. Als je een route aanmaakt moet deze namelijk gelinkt worden aan een database. Dat is in dit project Directus. In Directus kunnen Json-bestanden makkelijk worden aangepast en er kan code toegevoegd worden (door bijvoorbeeld een post te maken).
 
-Je kan html schri
 
 ## Bronnen
 - [Wireflow schetsen maken](https://github.com/fdnd-task/connect-your-tribe-squad-page/blob/main/docs/filteren-en-sorteren.md#wireflow-schetsen)
