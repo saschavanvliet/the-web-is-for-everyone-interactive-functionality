@@ -1,3 +1,49 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: var(--primary-color-beige);
+}
+
+header {
+    background-image: url('/images/IMG_6420.JPG'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 15em; 
+    display: flex;
+    align-items: center; 
+    margin-bottom: 3em;
+}
+
+header a, header summary, header h1 {
+    color: white;
+}
+
+.grid-container {
+    width: 50%;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain; 
+    scroll-behavior: smooth; 
+    margin-left: 3em;
+}
+
+.sfeerplaatjes {
+    position: relative;
+    flex: 0 0 auto; 
+    width: 15em; 
+    height: 100%;
+    scroll-snap-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 body.errorpage {
     background: var(--primary-color-green);
     color: var(--primary-color-beige);
