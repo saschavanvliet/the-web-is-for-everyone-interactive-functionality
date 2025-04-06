@@ -1,65 +1,218 @@
 * {
     margin: 0;
-}
+    box-sizing: border-box;
+  }
 
-body {
+  /* Styling voor stekjespagina */
+  body {
     background: var(--primary-color-beige);
-}
-
-header {
-    background-image: url('/images/IMG_6420.JPG'); 
+  
+    &.errorpage {     /* Css selector */
+      background: var(--primary-color-green);
+      color: var(--primary-color-beige);
+    }
+  }
+  
+  header {
+    background-image: url('/images/IMG_6420.JPG');
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    height: 15em; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 10em;
     display: flex;
-    align-items: center; 
-    margin-bottom: 3em;
-}
+    align-items: center;
+    padding: 1em;
+  
+    @media (min-width: 900px) {
+      height: 15em;
+      padding: 2em;
+      margin-bottom: 2em;
+    }
 
-header a, header summary, header h1 {
-    color: white;
-}
+    a, summary, h1 {
+        color: var(--background-color-main);
+      }
 
-.container {
+    ul {
+        list-style-type: none;  
+        padding: 0;             
+      }  
+  }
+  
+  .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 2em; 
+    grid-template-areas:
+      "plaatje"
+      "beschrijving"
+      "stekjes";
+    grid-template-columns: 1fr;
+    gap: 1em;
     width: 100%;
-}
-
-.grid-container {
+    padding: 1em;
+  
+    @media (min-width: 900px) {
+      grid-template-areas:
+        "plaatje beschrijving"
+        "stekjes stekjes";
+      grid-template-columns: 1fr 1fr;
+      gap: 2em;
+    }
+  }
+  
+  .plaatje-container {
+    grid-area: plaatje;
+    position: relative;
     display: grid;
     grid-auto-flow: column;
     place-items: center;
     overflow-x: auto;
-    overscroll-behavior-inline: contain; 
-    scroll-behavior: smooth; 
-    margin-left: 3em;
-}
-
-.sfeerplaatjes {
-    position: relative;
-    flex: 0 0 auto; 
-    width: 15em; 
-    height: 100%;
-    scroll-snap-align: center; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+  }
+  
+  .beschrijving {
+    grid-area: beschrijving;
+    padding: 1em;
+  }
+  
+.stekjes-container {
+    grid-area: stekjes;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    width: 100%;
+  
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Styling voor elk stekje */
+  .stekjes {
+    background: var(--background-color-main); 
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     text-align: center;
-}
-
-.beschrijving {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .stekjes:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .stekjes img {
+    width: 100%; 
+    height: auto;
+    border-radius: 5px; 
+    margin-bottom: 1em;
+  }
+  
+  .stekjes h1 {
+    font-size: 1.25rem;
+    margin-bottom: 1em;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--primary-color-brown);
+  }
+  
+  .like-button {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .like-button:hover {
     background: var(--primary-color-green);
-    padding: 6.1em;
-    color: var(--background-color-main);
-    margin-right: 3em;
-}
-
-body.errorpage {
+    color: #fff;
+  }
+  
+  .like-button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(80, 180, 137, 0.5); 
+  }
+  
+  /* Styling voor footer */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2em; 
+    padding: 2em;
     background: var(--primary-color-green);
-    color: var(--primary-color-beige);
-}
+
+    @media (min-width: 768px) {
+          grid-template-columns: repeat(3, 1fr); 
+          gap: 3em;
+        }
+    @media (min-width: 1024px) {
+          padding: 3em; 
+        }
+  }
+  
+  footer section {
+    background: var(--primary-color-beige);
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  footer h2 {
+    font-size: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Styling voor de plantdetailpagina */
+.stekje-detail {
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background: var(--background-color-main);
+    border-radius: 1em;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        max-width: 700px;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 1000px;
+    }
+  }
+  
+  .stekje-detail p {
+    margin-top: 0.5em;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+  
+  .stekje-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+  }

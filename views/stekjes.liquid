@@ -1,7 +1,11 @@
 {% render 'partials/head.liquid' %}
 
-<p>{{ stekje.beschrijving }}</p>
-<p>{{ stekje.giftig }}</p>
-<img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}">
+<section class="stekje-detail">
+  <h1>{{ stekje.naam }}</h1>
+  <p>{{ stekje.beschrijving }}</p>
+  <p>{{ stekje.giftig }}</p>
+  <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="400">
+</section>
+
 
 {% render 'partials/foot.liquid' %}

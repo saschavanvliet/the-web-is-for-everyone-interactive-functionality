@@ -1,7 +1,7 @@
 {% render 'partials/head.liquid' %}
 
-<div class="container">
-    <section class="grid-container">
+<main class="container">
+    <section class="plaatje-container">
         {% for plaatje in plaatjes %}
             <img 
                 class="sfeerplaatjes plaatjes-index" 
@@ -18,7 +18,7 @@
             <section class="stekjes">
                 <a href="/stekjes/{{ stekje.id }}" id="stekje-{{ stekje.id }}">
                     <h1>{{ stekje.naam }}</h1>
-                    <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="200">
+                    <img src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" alt="{{ stekje.naam }}" width="250">
                 </a>
                 
                 <form action="/stekjes/{{ stekje.id }}" method="POST">
@@ -28,7 +28,7 @@
             </section>
         {% endfor %}
     </section>
-</div>
+</main>
 
 <script>
     async function likeStekje(stekjeId) {
