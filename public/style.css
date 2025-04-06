@@ -2,15 +2,15 @@
     margin: 0;
     box-sizing: border-box;
   }
-
+  
   /* Styling voor stekjespagina */
   body {
     background: var(--primary-color-beige);
+  }
   
-    &.errorpage {     /* Css selector */
-      background: var(--primary-color-green);
-      color: var(--primary-color-beige);
-    }
+  &.errorpage {     
+    background: var(--primary-color-green);
+    color: var(--primary-color-beige);
   }
   
   header {
@@ -28,15 +28,15 @@
       padding: 2em;
       margin-bottom: 2em;
     }
-
+  
     a, summary, h1 {
-        color: var(--background-color-main);
-      }
-
+      color: var(--background-color-main);
+    }
+  
     ul {
-        list-style-type: none;  
-        padding: 0;             
-      }  
+      list-style-type: none;
+      padding: 0;
+    }
   }
   
   .container {
@@ -59,38 +59,34 @@
     }
   }
   
-  .plaatje-container {
-    grid-area: plaatje;
-    position: relative;
-    display: grid;
-    grid-auto-flow: column;
-    place-items: center;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-behavior: smooth;
-  }
-  
-  .beschrijving {
-    grid-area: beschrijving;
-    padding: 1em;
-  }
-  
-.stekjes-container {
-    grid-area: stekjes;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
-    width: 100%;
-  
-    @media (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
+  @supports (display: grid) {
+    .plaatje-container {
+      grid-area: plaatje;
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      place-items: center;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-behavior: smooth;
     }
-    @media (min-width: 900px) {
-      grid-template-columns: repeat(3, 1fr);
+  
+    .stekjes-container {
+      grid-area: stekjes;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1em;
+      width: 100%;
+  
+      @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
   
-  /* Styling voor elk stekje */
   .stekjes {
     background: var(--background-color-main); 
     padding: 1.5em;
@@ -140,21 +136,22 @@
     box-shadow: 0 0 0 2px rgba(80, 180, 137, 0.5); 
   }
   
-  /* Styling voor footer */
-.footer-container {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 2em; 
-    padding: 2em;
-    background: var(--primary-color-green);
-
-    @media (min-width: 768px) {
-          grid-template-columns: repeat(3, 1fr); 
-          gap: 3em;
-        }
-    @media (min-width: 1024px) {
-          padding: 3em; 
-        }
+  @supports (display: grid) {
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 2em; 
+      padding: 2em;
+      background: var(--primary-color-green);
+  
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 3em;
+      }
+      @media (min-width: 1024px) {
+        padding: 3em; 
+      }
+    }
   }
   
   footer section {
@@ -181,9 +178,9 @@
   footer a:hover {
     text-decoration: underline;
   }
-
-  /* Styling voor de plantdetailpagina */
-.stekje-detail {
+  
+  /* Styling detailpagina stekjes */
+  .stekje-detail {
     max-width: 500px;
     margin: 2em auto;
     padding: 1.5em;
@@ -192,13 +189,13 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
-
+  
     @media (min-width: 768px) {
-        max-width: 700px;
+      max-width: 700px;
     }
-
+  
     @media (min-width: 1024px) {
-        max-width: 1000px;
+      max-width: 1000px;
     }
   }
   
@@ -216,3 +213,4 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 1em;
   }
+  
