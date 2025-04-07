@@ -147,11 +147,7 @@ Aan de hand van jouw uitleg moet iemand anders in grote lijnen de code kunnen be
 
 Voor dit project heb ik een interactieve website gebouwd waarbij ik gebruik heb gemaakt van progressive enhancement om een toegankelijke en soepele gebruikerservaring te bieden. De website bestaat onder andere uit een overzichtspagina, een detailpagina en een post-interactie. Op de overzichtspagina kunnen gebruikers een lijst met stekjes bekijken en doorklikken naar de desbetreffende detailpagina, waar meer informatie over een specifiek stekje wordt getoond. Daarnaast kunnen gebruikers stekjes liken zodat het in de database wordt opgeslagen.
 
-Om te website op te zetten heb ik gebruik gemaakt van Node.JS (server-side JavaScript) met packages als Express en Liquid.
-
-States hier uitleggen!!!
-
-Bij de ontwikkeling van de website heb ik HTML, CSS en JavaScript gecombineerd om zowel de basisfunctionaliteit als interactieve elementen te realiseren. Door progressive enhancement toe te passen, blijft de kernfunctionaliteit van de website intact, zelfs wanneer JavaScript en css zijn uitgeschakeld. De website is daarnaast responsief ontworpen, zodat hij goed werkt op zowel desktop als mobiele apparaten. Ten slotte is de website getest op verschillende browsers om te kijken of functies ondersteund worden.
+Om te website op te zetten heb ik gebruik gemaakt van Node.JS (server-side JavaScript) met packages als Express en Liquid. Bij de ontwikkeling van de site heb ik HTML, CSS en JavaScript gecombineerd om zowel de basisfunctionaliteit als interactieve elementen te realiseren. Door progressive enhancement toe te passen, blijft de kernfunctionaliteit van de website intact, zelfs wanneer JavaScript en css zijn uitgeschakeld. De website is daarnaast responsief ontworpen, zodat hij goed werkt op zowel desktop als mobiele apparaten. Ten slotte is de website getest op verschillende browsers om te kijken of functies ondersteund worden.
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
