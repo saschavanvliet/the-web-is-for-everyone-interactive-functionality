@@ -128,7 +128,13 @@ User stories:
 
 Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekjespagina. Met deze website kunnen gebruikers die in de Openbare Bibliotheek van Amsterdam (nu nog alleen in Oost) komen de website navigeren en hun favoriete stekjes bekijken. Op de website is namelijk een overzicht van alle stekjes te vinden. Gebruikers kunnen tevens hun favoriete stekje liken en dit komt in de database terecht. 
 
---> Tonen hoe het is geworden???
+> Hoe is de site geworden?
+> 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9252f818-15b6-4b71-8031-06d3aa91892b" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/bbdca229-bd70-4304-acc7-7797bc8125dc" />
+
+Website: https://the-web-is-for-everyone-interactive-wef2.onrender.com/
 
 
 ## Kenmerken
